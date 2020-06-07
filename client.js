@@ -14,33 +14,29 @@ let main = async () => {
             publicKeyEncoding: { type: 'spki', format: 'pem' },
             privateKeyEncoding: { type: 'pkcs8', format: 'pem' }
         })
-        let encr = OrderManager.encrypt(publicKey, { name: "name", phone: "phone", post: "post" })
-        console.log(encr);
-        let decr = OrderManager.decrypt(privateKey, encr);
-        console.log(decr);
-
-
-        // let itemManager = await ItemManager.createInstance(ipfs, marketContractAddress);
-        // let orderManager = new OrderManager(ipfs);
-        // await itemManager.add(
-        //     "seller",
-        //     "name",
-        //     "price",
-        //     "category",
-        //     "type",
-        //     "count",
-        //     "size",
-        //     "colour",
-        //     [("image", "image")]);
-        // let cid = await orderManager.add(
-        //     "orderId",
-        //     "dfda83b95889",
-        //     "34e842d6b8fd",
-        //     "zdpuB2oe6QpcftiJvAJkEJy4giHTkcivvURDUz14UdgxnVZc2",
-        //     "zdpuAzZissX6KVNymgHsF5S8jtn79P3tEjTbc9A3eQp9JFAHh"
-        // );
-        // console.log(await orderManager.getByCid(cid));
-        // console.log(await itemManager.getAll());
+        let itemManager = await ItemManager.createInstance(ipfs, marketContractAddress);
+        let orderManager = new OrderManager(ipfs);
+        await itemManager.add(
+            "seller",
+            "name",
+            "price",
+            "category",
+            "type",
+            "count",
+            "size",
+            "colour",
+            [("image", "image")]);
+        let cid = await orderManager.add(
+            "dfda83b95889",
+            "34e842d6b8fd",
+            "name",
+            "phone",
+            "postOffice",
+            publicKey,
+            publicKey
+        );
+        console.log(await orderManager.getByCid(cid));
+        console.log(await itemManager.getAll());
     } catch (e) {
         console.log(e);
     }

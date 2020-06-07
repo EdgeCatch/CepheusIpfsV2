@@ -2,14 +2,13 @@ const ipfsClient = require("ipfs-http-client");
 const ItemManager = require("./lib/ItemManager");
 const OrderManager = require("./lib/OrderManager");
 const nodeUrl = "/ip4/127.0.0.1/tcp/5001";
-const itemsCid = "bafyreiggcejixnw5wo3gesymhbcwfo7p6yrro2u2se4fcsxikwiexk2efm";
 
 let main = async () => {
     try {
         let ipfs = ipfsClient(nodeUrl);
         await ipfs.id();
-
-        let itemManager = new ItemManager(ipfs, itemsCid);
+        let marketContractAddress = "KT1N5h4c7kZ85DDjrYGqv6xmQRwufG2x2c5c";
+        let itemManager = await ItemManager.createInstance(ipfs, marketContractAddress);
         let orderManager = new OrderManager(ipfs);
         await itemManager.add(
             "seller",

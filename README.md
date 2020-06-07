@@ -78,6 +78,8 @@ add(buyer, seller, encryptedForBuyer, encryptedForSeller)
 Returns new cid of list.
 ```
 
+Example of usage an be found in `client.js`.
+
 # Known issues
 
 As soon as `IPFS` uses routing by content and its hard to group it properly. The way we use is called linked list where every new entry points to the previous one.

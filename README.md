@@ -62,6 +62,10 @@ The IpfsManager support following API:
 ### getAll()
 Returns list of all records.
 
+### getByCid(cid)
+- `cid` - cid of the entry.
+Returns specific record.
+
 The `ItemManager` inherits `IpfsManager`:
 ```
 add(seller, name, price, category, type, count, size, colour, images)

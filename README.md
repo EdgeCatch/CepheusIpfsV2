@@ -67,16 +67,14 @@ Returns list of all records.
 Returns specific record.
 
 The `ItemManager` inherits `IpfsManager`:
-```
-add(seller, name, price, category, type, count, size, colour, images)
+
+### add(seller, name, price, category, type, count, size, colour, images)
 Returns new cid of list.
-```
 
 The `OrderManager` inherits `IpfsManager`:
-```
-add(buyer, seller, encryptedForBuyer, encryptedForSeller)
+
+### add(buyer, seller, encryptedForBuyer, encryptedForSeller)
 Returns new cid of list.
-```
 
 Example of usage an be found in `client.js`.
 

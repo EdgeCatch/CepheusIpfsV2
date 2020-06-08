@@ -3,7 +3,8 @@
   "version": "1.1.0",
   "main": "index.js",
   "dependencies": {
-    "ipfs-http-client": "^44.2.0",
-    "@taquito/taquito": "^6.3.0-wallet.3"
+    "@taquito/taquito": "^6.3.0-wallet.3",
+    "cryptico": "^1.0.2",
+    "ipfs-http-client": "^44.2.0"
   }
 }

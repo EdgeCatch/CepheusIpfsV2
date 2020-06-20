@@ -66,12 +66,12 @@ Returns list of all records.
 - `cid` - cid of the entry.
 Returns specific record.
 
-The `ItemManager` inherits `IpfsManager`:
+The `ItemManager` inherits `IpfsManager` interface and implements:
 
 ### add(seller, name, price, category, type, count, size, colour, images)
 Returns new cid of list.
 
-The `OrderManager` inherits `IpfsManager`:
+The `OrderManager` inherits `IpfsManager` interface and implements:
 
 ### add(buyer, seller, encryptedForBuyer, encryptedForSeller)
 Returns new cid of list.
@@ -89,7 +89,4 @@ The head of list is stored in contracts and is updated when new item is register
 We are looking for the better architecture solution.
 
 # TODO:
-- add encoder/decoder for order information for seller and buyer;
-- implement get filters;
-- connect to contracts to fetch cid;
-- implement update cid method.
+- implement get filters.
